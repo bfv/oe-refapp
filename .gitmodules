@@ -1,0 +1,3 @@
+[submodule "bfvlib"]
+	path = bfvlib
+	url = https://github.com/bfv/bfvlib.git
