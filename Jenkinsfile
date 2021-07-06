@@ -6,7 +6,9 @@ pipeline {
         stage('setup') {
             steps {
                 script {
+                    workspace = pwd()
                     echo 'setup...'
+                    echo '..workspace: ' + workspace
                 }
             }
         }
