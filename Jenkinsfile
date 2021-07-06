@@ -1,26 +1,43 @@
 pipeline {
-
     stages {
-
         stage('setup') {
-            echo "setup"
+            steps {
+                script {
+                    echo 'setup...'
+                }
+            }
         }
 
         stage('load databases') {
-            echo "load df's"
+            steps {
+                script {
+                    echo 'load df\'s...'
+                }
+            }
         }
 
         stage('compile') {
-            echo "compile"
+            steps {
+                script {
+                    echo 'compile...'
+                }
+            }
         }
 
         stage('package') {
-            echo "package"
+            steps {
+                script {
+                    echo 'package...'
+                }
+            }
         }
 
         stage('test') {
-            echo "test"
+            steps {
+                script {
+                    echo 'test...'
+                }
+            }
         }
-
     }
 }
