@@ -1,6 +1,6 @@
 
 def readDependencies() {
-    echo 'readDependencies'
+    echo 'readDependencies from ' + sourceDir + 'dependencies.json'
 }
 
 return [

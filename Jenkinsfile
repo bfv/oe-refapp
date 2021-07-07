@@ -3,13 +3,22 @@ pipeline {
     agent any
     
     stages {
-        stage('setup') {
+
+        stage('init environment') {
             steps {
                 script {
                     workspace = pwd()
+                    sourceDir = workspace + '/src'
+                }
+            }
+        }
+
+        stage('setup') {
+            steps {
+                script {
                     echo 'setup...'
                     echo '..workspace: ' + workspace
-                    def setupLib = load(workspace + '/src/refapp/cicd/setup.groovy')
+                    def setupLib = load(sourceDir + '/refapp/cicd/setup.groovy')
                     setupLib.readDependencies()
                 }
             }
