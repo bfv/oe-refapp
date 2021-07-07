@@ -2,7 +2,7 @@
 
 workspace = ''
 sourceDir = ''
-//dependencies = {}
+dependencies = {}
 
 pipeline {
 
@@ -26,7 +26,7 @@ pipeline {
                     echo '..workspace: ' + workspace
                     setupLib = load(sourceDir + '/refapp/cicd/setup.groovy')
                     setupLib.readDependencies()
-                    echo 'blabla: ' + dependencies.bfvlib
+                    //echo 'blabla: ' + dependencies.bfvlib
                 }
             }
         }
