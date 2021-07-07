@@ -1,7 +1,7 @@
 
 import groovy.json.JsonSlurper
 
-def readDependencies(sourceDir) {
+def readDependencies() {
     echo 'readDependencies from ' + sourceDir + '/dependencies.json'
     def propertyFile = new File(sourceDir + '/dependencies.json')
     def jsonSlurper = new JsonSlurper()

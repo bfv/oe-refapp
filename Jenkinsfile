@@ -1,3 +1,9 @@
+// GLOBAL defintions. In this section the globals are defined which can be used through the pipeline
+
+workspace = ''
+sourceDir = ''
+dependencies = {}
+
 pipeline {
 
     agent any
@@ -19,7 +25,8 @@ pipeline {
                     echo 'setup...'
                     echo '..workspace: ' + workspace
                     setupLib = load(sourceDir + '/refapp/cicd/setup.groovy')
-                    setupLib.readDependencies(sourceDir)
+                    setupLib.readDependencies()
+                    echo 'blabla: ' + dependencies.bfvlib
                 }
             }
         }
