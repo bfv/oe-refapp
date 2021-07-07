@@ -1,5 +1,5 @@
 
-readDependencies(string sourceDir) {
+readDependencies(sourceDir) {
     echo 'readDependencies from ' + sourceDir + '/dependencies.json'
 }
 
