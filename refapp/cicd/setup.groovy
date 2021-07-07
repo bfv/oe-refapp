@@ -5,8 +5,8 @@ def readDependencies() {
     echo 'readDependencies from ' + sourceDir + '/dependencies.json'
     def propertyFile = new File(sourceDir + '/dependencies.json')
     def jsonSlurper = new JsonSlurper()
-    def dependencies = jsonSlurper.parse(propertyFile)
-    println(dependencies.bfvlib)
+    def deps = jsonSlurper.parse(propertyFile)
+    dependencies.bfvlib = deps.bfvlib
 }
 
 return [
