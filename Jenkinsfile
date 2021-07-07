@@ -9,7 +9,7 @@ pipeline {
                     workspace = pwd()
                     echo 'setup...'
                     echo '..workspace: ' + workspace
-                    def setupLib = load(workspace + '/refapp/cicd/setup.groovy')
+                    def setupLib = load(workspace + '/src/refapp/cicd/setup.groovy')
                     setupLib.readDependencies()
                 }
             }
