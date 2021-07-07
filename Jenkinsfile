@@ -2,7 +2,7 @@
 
 workspace = ''
 sourceDir = ''
-dependencies = {}
+//dependencies = {}
 
 pipeline {
 
