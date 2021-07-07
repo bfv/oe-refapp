@@ -18,8 +18,8 @@ pipeline {
                 script {
                     echo 'setup...'
                     echo '..workspace: ' + workspace
-                    def setupLib = load(sourceDir + '/refapp/cicd/setup.groovy')
-                    setupLib.readDependencies()
+                    setupLib = load(sourceDir + '/refapp/cicd/setup.groovy')
+                    setupLib.readDependencies(sourceDir)
                 }
             }
         }

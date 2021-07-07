@@ -1,6 +1,6 @@
 
-def readDependencies() {
-    echo 'readDependencies from ' + sourceDir + 'dependencies.json'
+readDependencies(string sourceDir) {
+    echo 'readDependencies from ' + sourceDir + '/dependencies.json'
 }
 
 return [
