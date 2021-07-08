@@ -35,20 +35,15 @@ pipeline {
                     echo 'dependencies:'
                     echo '  repo:' + bfvlibRepo
                     echo '  branch: ' + bfvlibBranch
- 
-                    checkout([
-                        $class: 'GitSCM',
-                        userRemoteConfigs: [
-                            [url: "${bfvlibRepo}", name: 'origin']
-                        ],
-                        extension: [
-                            [$class: 'RelativeTargetDirectory', relativeTargetDir: "src/bfvlib/"]
-                        ]
-                    ])
 
-                    /*
-                    checkout(scm: [$class: 'GitSCM', userRemoteConfigs: [[url: "${gitURL}"], [name: "origin"]], branches: [[name: "${gitTag}"]]])
-                    */
+                    dir('src/bfvlib') {
+                        checkout([
+                            $class: 'GitSCM',
+                            userRemoteConfigs: [
+                                [url: "${bfvlibRepo}", name: 'origin']
+                            ]
+                        ])
+                    }
                 }
             }
         }
