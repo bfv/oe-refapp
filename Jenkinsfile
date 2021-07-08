@@ -42,7 +42,7 @@ pipeline {
                             [url: "${bfvlibRepo}", name: 'origin']
                         ],
                         extension: [
-                            [$class: 'RelativeTargetDirectory', relativeTargetDir: "bfvlib"]
+                            [$class: 'RelativeTargetDirectory', relativeTargetDir: "src/bfvlib/"]
                         ]
                     ])
 
