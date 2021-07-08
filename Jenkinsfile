@@ -38,8 +38,7 @@ pipeline {
                     checkout([
                         $class: 'GitSCM',
                         userRemoteConfigs: [
-                            [url: "https://github.com/bfv/bfvlib.git"],
-                            [name: "origin"]
+                            [url: "${bfvlibRepo}", name: "origin"]
                         ]
                     ])
 
