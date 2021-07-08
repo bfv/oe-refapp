@@ -38,11 +38,11 @@ pipeline {
                     checkout([
                         $class: 'GitSCM',
                         userRemoteConfigs: [
-                            [url: '${bfvlibRepo}', name: 'origin']
+                            [url: "${bfvlibRepo}", name: 'origin']
                         ],
                         extension: [
                             [$class: 'CleanBeforeCheckout'],
-                            [$class: 'RelativeTargetDirectory', relativeTargetDir: '${sourceDir}/bfvlib']
+                            [$class: 'RelativeTargetDirectory', relativeTargetDir: "${sourceDir}/bfvlib"]
                         ]
                     ])
 
