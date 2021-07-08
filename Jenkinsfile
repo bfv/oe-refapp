@@ -26,8 +26,9 @@ pipeline {
             steps {
                 script {
                     echo 'setup...'
-                    echo '..workspace: ' + workspace
-
+                    echo '  - workspace: ' + workspace
+                    echo '  - sourceDir' + sourceDir
+                    
                     setupLib = load(sourceDir + '/refapp/cicd/setup.groovy')
                     setupLib.readDependencies()
 
@@ -41,7 +42,6 @@ pipeline {
                             [url: "${bfvlibRepo}", name: 'origin']
                         ],
                         extension: [
-                            [$class: 'CleanBeforeCheckout'],
                             [$class: 'RelativeTargetDirectory', relativeTargetDir: "${sourceDir}/bfvlib"]
                         ]
                     ])
