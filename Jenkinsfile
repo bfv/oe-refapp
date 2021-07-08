@@ -6,6 +6,11 @@ dependencies = {
     bfvlib = ''
 }
 
+dependencyRepos {
+    bfvlib = 'https://github.com/bfv/bfvlib.git'
+}
+
+
 pipeline {
 
     agent any
@@ -26,13 +31,22 @@ pipeline {
                 script {
                     echo 'setup...'
                     echo '..workspace: ' + workspace
+
                     setupLib = load(sourceDir + '/refapp/cicd/setup.groovy')
                     setupLib.readDependencies()
-                    echo 'bfvlib: ' + dependencies.bfvlib
+
+                    echo 'dependencies:'
+                    echo '  bfvlib: ' + dependencies.bfvlib
+
+                    checkout([
+                        $class: 'GitSCM',
+                        branches: [['refs/tags/' + dependencies.bfvlib]],
+                        userRemoteConfig: [[url: dependencyRepos.bfvlib]]
+                    ])
                 }
             }
         }
-
+/*
         stage('load databases') {
             steps {
                 script {
@@ -64,5 +78,6 @@ pipeline {
                 }
             }
         }
+*/
     }
 }
