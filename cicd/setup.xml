@@ -1,0 +1,7 @@
+<project name="setup" default="setup" basedir="..">
+
+    <target name="setup">
+        <echo message="start setup" />
+    </target>
+
+</project>
