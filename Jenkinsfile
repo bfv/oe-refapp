@@ -38,10 +38,10 @@ pipeline {
                     echo 'dependencies:'
                     echo '  bfvlib: ' + dependencies.bfvlib
                     echo '  repo:' + dependencyRepos.bfvlib
-                    
+
                     checkout([
                         $class: 'GitSCM',
-                        branches: [['refs/tags/' + dependencies.bfvlib]],
+                        branches: [[name: 'refs/tags/' + dependencies.bfvlib]],
                         userRemoteConfig: [[url: dependencyRepos.bfvlib]]
                     ])
                 }
