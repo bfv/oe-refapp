@@ -42,7 +42,7 @@ pipeline {
                     checkout([
                         $class: 'GitSCM',
                         branches: [[name: 'refs/tags/' + dependencies.bfvlib]],
-                        userRemoteConfig: [[url: dependencyRepos.bfvlib]]
+                        userRemoteConfigs: [[url: dependencyRepos.bfvlib]]
                     ])
                 }
             }
