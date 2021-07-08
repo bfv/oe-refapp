@@ -6,7 +6,7 @@ dependencies = {
     bfvlib = ''
 }
 
-dependencyRepos {
+dependencyRepos = {
     bfvlib = 'https://github.com/bfv/bfvlib.git'
 }
 
@@ -37,7 +37,8 @@ pipeline {
 
                     echo 'dependencies:'
                     echo '  bfvlib: ' + dependencies.bfvlib
-
+                    echo '  repo:' + dependencyRepos.bfvlib
+                    
                     checkout([
                         $class: 'GitSCM',
                         branches: [['refs/tags/' + dependencies.bfvlib]],
