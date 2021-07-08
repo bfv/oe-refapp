@@ -35,14 +35,11 @@ pipeline {
                     echo '  repo:' + bfvlibRepo
                     echo '  branch: ' + bfvlibBranch
  
-                    checkout(scm: [
+                    checkout([
                         $class: 'GitSCM',
                         userRemoteConfigs: [
                             [url: 'https://github.com/bfv/bfvlib.git'],
                             [name: 'origin']
-                        ],
-                        branches: [
-                            [name: "${bfvlibBranch}"]
                         ]
                     ])
 
