@@ -43,7 +43,7 @@ pipeline {
                                 [url: "${bfvlibRepo}", name: 'origin']
                             ],
                             branches: [
-                                [name: 'refs/tags/release/v0.0.1']
+                                [name: "${bfvlibBranch}"]
                             ]
                         ])
                     }
