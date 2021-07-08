@@ -2,13 +2,9 @@
 
 workspace = ''
 sourceDir = ''
-dependencies = {
-    bfvlib = ''
-}
 
-dependencyRepos = {
-    bfvlibRepo = 'https://github.com/bfv/bfvlib.git'
-}
+bfvlibRepo = 'https://github.com/bfv/bfvlib.git'
+bfvlibBranch = ''
 
 
 pipeline {
@@ -36,8 +32,8 @@ pipeline {
                     setupLib.readDependencies()
 
                     echo 'dependencies:'
-                    echo '  bfvlib: ' + dependencies.bfvlib
-                    echo '  repo:' + dependencyRepos.bfvlibRepo
+                    echo '  bfvlib: ' + bfvlibBranch
+                    echo '  repo:' + bfvlibRepo
 
                     checkout([
                         $class: 'GitSCM',
