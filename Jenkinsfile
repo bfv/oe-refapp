@@ -41,6 +41,9 @@ pipeline {
                             $class: 'GitSCM',
                             userRemoteConfigs: [
                                 [url: "${bfvlibRepo}", name: 'origin']
+                            ],
+                            branches: [
+                                ['refs/tags/release/v0.0.1']
                             ]
                         ])
                     }
