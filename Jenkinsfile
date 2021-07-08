@@ -38,11 +38,11 @@ pipeline {
                     checkout(scm: [
                         $class: 'GitSCM',
                         userRemoteConfigs: [
-                            [url: '${bfvlibRepo}'],
+                            [url: "${bfvlibRepo}"],
                             [name: 'origin']
                         ],
                         branches: [
-                            [name: '${bfvlibBranch}']
+                            [name: "${bfvlibBranch}"]
                         ]
                     ])
 
