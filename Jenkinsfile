@@ -32,14 +32,14 @@ pipeline {
                     setupLib.readDependencies()
 
                     echo 'dependencies:'
-                    echo '  bfvlib: ' + bfvlibBranch
                     echo '  repo:' + bfvlibRepo
-
+                   echo '   branch: ' + bfvlibBranch
+ 
                     checkout([
                         $class: 'GitSCM',
                         userRemoteConfigs: [
-                            [url: dependencyRepos.bfvlib],
-                            [name: 'refs/tags/' + dependencies.bfvlib]
+                            [url: bfvlibRepo],
+                            [name: 'refs/tags/' + bfvlibBranch]
                         ]
                     ])
                 }
