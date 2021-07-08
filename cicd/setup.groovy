@@ -2,8 +2,9 @@
 import groovy.json.JsonSlurper
 
 def readDependencies() {
-    echo 'readDependencies from ' + sourceDir + '/dependencies.json'
-    def propertyFile = new File(sourceDir + '/dependencies.json')
+    def depsFilename = sourceDir + '/refapp/dependencies.json'
+    echo 'readDependencies from ' + depsFilename
+    def propertyFile = new File(depsFilename)
     def jsonSlurper = new JsonSlurper()
     def deps = jsonSlurper.parse(propertyFile)
     dependencies.bfvlib = deps.bfvlib
